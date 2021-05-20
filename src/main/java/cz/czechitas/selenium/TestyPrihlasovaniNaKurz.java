@@ -39,8 +39,6 @@ public class TestyPrihlasovaniNaKurz {
         WebElement tlacitkoPrihlasit = prohlizec.findElement(By.xpath("//form//button[contains(text(),'Přihlásit')]"));
         tlacitkoPrihlasit.click();
         WebElement potvrzeniOprihlaseni = prohlizec.findElement(By.className("dropdown-toggle"));
-
-
     }
 
 
@@ -112,7 +110,6 @@ public class TestyPrihlasovaniNaKurz {
         polickoHeslo.sendKeys("Heslo123.");
         WebElement tlacitkoPrihlasit = prohlizec.findElement(By.xpath("/html/body/div/div/div/div/div/div/form/div[3]/div/button"));
         tlacitkoPrihlasit.click();
-
         WebElement zakonyZastupce = prohlizec.findElement(By.id("parent_name"));
         Assertions.assertEquals("MagdalenaKocurkova", zakonyZastupce.getAttribute("value"));
 
@@ -122,5 +119,4 @@ public class TestyPrihlasovaniNaKurz {
     @AfterEach
     public void tearDown() {
         prohlizec.close();
-
 }}
