@@ -25,7 +25,7 @@ public class TestyPrihlasovaniNaKurz {
 
     @Test
     //Rodič s existujícím účtem se musí být schopen přihlásit do webové aplikace.
-    public void rodicSExistujicimUctemSeMusíPrihlasit() {
+    public void RodicSExistujicimUctemSeMusíPrihlasit() {
         prohlizec.navigate().to(URL_APLIKACE);
         WebElement prihlaseni = prohlizec.findElement(By.linkText("Přihlásit"));
         prihlaseni.click();
@@ -41,7 +41,7 @@ public class TestyPrihlasovaniNaKurz {
     @Test
     //Rodič s existujícím účtem musí být schopen přihlásit svoje dítě na kurz.
     //Varianta, že rodič nejprve vybere kurz a potom se přihlásí ke svému účtu, vyplní přihlášku, odešle ji a nakonec ve svém seznamu přihlášek zkontroluje, že ji systém eviduje.
-    public void rodicMusíVybratKurzAPrihlasitDite() {
+    public void RodicMusíVybratKurzAPrihlasitDite() {
         prohlizec.navigate().to(URL_APLIKACE);
         WebElement kurzyWebu = prohlizec.findElement(By.xpath("/html/body/div/div/div[1]/div[2]/div/div[2]/a"));
         kurzyWebu.click();
@@ -78,7 +78,7 @@ public class TestyPrihlasovaniNaKurz {
     // Rodič s existujícím účtem musí být schopen přihlásit svoje dítě na kurz.
     //Varianta, že se rodič nejprve přihlásí ke svému účtu a potom vybere kurz, vyplní, odešle, zkontroluje v seznamu.
     public void RodicSeMusiPrihlasitAPoteVybratKurz() {
-        rodicSExistujicimUctemSeMusíPrihlasit();
+        RodicSExistujicimUctemSeMusíPrihlasit();
         WebElement vytvoritNovouPrihlasku = prohlizec.findElement(By.xpath("/html/body/div/div/div/div/div/div[1]/a"));
         vytvoritNovouPrihlasku.click();
         WebElement trimesicniKurz = prohlizec.findElement(By.xpath("/html/body/div/div/div[1]/div[4]/div/div[2]/a"));
