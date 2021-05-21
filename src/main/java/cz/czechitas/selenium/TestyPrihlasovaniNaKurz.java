@@ -78,6 +78,7 @@ public class TestyPrihlasovaniNaKurz {
     // Rodič s existujícím účtem musí být schopen přihlásit svoje dítě na kurz.
     //Varianta, že se rodič nejprve přihlásí ke svému účtu a potom vybere kurz, vyplní, odešle, zkontroluje v seznamu.
     public void RodicSeMusiPrihlasitAPoteVybratKurz() {
+        prohlizec.navigate().to(URL_APLIKACE);
         RodicSExistujicimUctemSeMusíPrihlasit();
         WebElement vytvoritNovouPrihlasku = prohlizec.findElement(By.xpath("/html/body/div/div/div/div/div/div[1]/a"));
         vytvoritNovouPrihlasku.click();
@@ -98,9 +99,11 @@ public class TestyPrihlasovaniNaKurz {
         WebElement bankovniPrevod = prohlizec.findElement(By.xpath("/html/body/div/div/div/div/div/form/table/tbody/tr[8]/td[2]/span[1]/label"));
         bankovniPrevod.click();
         WebElement polickoSouhlasSPodminkami = prohlizec.findElement(By.xpath("//label[@for='terms_conditions']"));
-        polickoSouhlasSPodminkami.submit();
+        polickoSouhlasSPodminkami.click();
         WebElement polickoVytvoritPrihlasku = prohlizec.findElement(By.xpath("/html/body/div/div/div/div/div/form/table/tbody/tr[11]/td[2]/input"));
         polickoVytvoritPrihlasku.click();
+        WebElement potvrzeniPrihlasky = prohlizec.findElement(By.xpath("//*[text()='Stáhnout potvrzení o přihlášení']"));
+        Assertions.assertNotNull(potvrzeniPrihlasky);
     }
 
     @Test
